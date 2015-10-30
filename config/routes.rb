@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Routes for the Director resource:
   # CREATE
   get('/directors/new_form', { :controller => 'directors', :action => 'new_form' })
-  get('/create_director', { :controller => 'director', :action => 'create_row' })
+  get('/create_director', { :controller => 'directors', :action => 'create_row' })
 
   # READ
   get('/directors', { :controller => 'directors', :action => 'index' })
@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   # UPDATE
   get('/movies/:id/edit_form', { :controller => 'movies', :action => 'edit_form' })
-  get('/update_movie/:id', { :controller => 'movies', :action => 'update_row' })
+  get('/update_movie/:id', { :controller => 'movies', :action => 'update_movie' })
 
   # DELETE
   get('/delete_movie/:id', { :controller => 'movies', :action => 'destroy' })
