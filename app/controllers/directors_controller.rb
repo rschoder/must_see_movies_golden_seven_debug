@@ -8,7 +8,7 @@ class DirectorsController < ApplicationController
   end
 
   def new_form
-     @director = Director.new
+  @director = Director.new
   end
 
   def create_row
@@ -20,7 +20,7 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    render("show")
+    redirect_to "http://localhost:3000/directors"
   end
 
   def edit_form
@@ -29,15 +29,14 @@ class DirectorsController < ApplicationController
 
   def update_row
     @director = Director.find(params[:id])
-
-    @director.dob = params[":dob"]
-    @director.name = params[":name"]
-    @director.bio = params[":bio"]
-    @director.image_url = params[":image_url"]
+    @director.dob = params[:dob]
+    @director.name = params[:name]
+    @director.bio = params[:bio]
+    @director.image_url = params[:image_url]
 
     @director.save
 
-    render("show")
+    redirect_to "http://localhost:3000/directors"
   end
 
   def destroy
